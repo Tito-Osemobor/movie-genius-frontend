@@ -1,11 +1,11 @@
-const BASE_URL = "https://localhost:8080/moviegenius/movies";
+const BASE_URL = "http://localhost:8080/moviegenius/movies";
 
 const fetchApi = async (endpoint, options = {}) => {
   try {
     // const authToken = getAuthToken();
     const authToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjRAYWRtaW4uY29tIiwiaWF0IjoxNzA5MDMwMTEyLCJleHAiOjE3MDk2MzQ5MTJ9.LlK5iLWnP3WkkZRAfqQQI64bdSr6KbLvKyH_eFJMkoI";
 
-    const response = await fetch(`${BASE_URL}/${endpoint}`, {
+    const response = await fetch(`${BASE_URL}${endpoint}`, {
       ...options,
       headers: {
         ...options.headers,
