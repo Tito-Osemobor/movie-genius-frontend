@@ -19,18 +19,17 @@ const Slider = () => {
   return (
     <div className="absolute -top-36">
       <div className="gallery rotate-12 select-none">
-      {posterData.map((rowData) => (
-        <div className="gallery-tray">
-          {rowData.map((path, index) => (
-            <div>
-              <img key={index} src={path} />
-            </div>
-          ))}
-        </div>
-      ))}
+        {posterData.map((rowData, index) => (
+          <div className="gallery-tray" key={index}>
+            {rowData.map((path, index) => (
+              <div key={index}>
+                <img src={path} alt="poster gallery" />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
-    </div>
-    
   );
 };
 
