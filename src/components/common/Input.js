@@ -2,19 +2,18 @@ import React from "react";
 
 const Input = (props) => {
   return (
-    <div className="relative z-10">
-      <input type="text" id="emailInput"
+    <div className="relative">
+      <input type="text" id={props.id}
              className="block px-3 pb-2.5
-                        pt-4 w-96 h-16 text-md text-white
-                        bg-opacity-30 bg-gray-700 rounded-md
-                        appearance-none duration-300
-                        focus:outline-none
-                        focus:ring-0 focus:border-2 focus:border-gray-100 peer"
+                        pt-4 w-96 h-16 text-sm text-white
+                        bg-opacBlack-70 rounded-md border border-gray-700
+                        appearance-none duration-300 peer
+                        focus:ring-0 focus:outline-2 focus:outline-gray-100 focus:outline-offset-4"
              placeholder=" "/>
-      <label htmlFor="emailInput"
-             className="absolute text-md text-gray-300 font-semibold bg-none
+      <label htmlFor={props.id}
+             className="absolute text-sm text-gray-300 font-semibold bg-none
                         duration-300 transform -translate-y-4 scale-75 top-5
-                        z-10 origin-[0] px-3
+                        origin-[0] px-3 select-none
                         peer-placeholder-shown:scale-100
                         peer-placeholder-shown:-translate-y-3 peer-placeholder-shown:top-1/2
                         peer-focus:top-5 peer-focus:scale-75 peer-focus:-translate-y-4
