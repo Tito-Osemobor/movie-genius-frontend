@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Input from "../components/common/Input";
 import Button from "../components/common/Button";
-import Slider from "../components/Slider/Slider";
+import Gallery from "../components/Gallery/Gallery";
 import "../assets/styles/Home.css";
 
 const Home = () => {
   return (
     <div className={"flex flex-col h-screen relative"}>
+      <Gallery />
+      
       <nav className={"flex items-center justify-between p-5 z-50"}>
         <h1 className={"text-red-600 font-extrabold italic text-4xl"}>
           MovieGenius
@@ -26,7 +28,6 @@ const Home = () => {
       </nav>
 
       <main className={"flex-1 flex items-center justify-center text-center"}>
-        <Slider />
         <div className={"space-y-4 z-50"}>
           <div className={"space-y-5"}>
             <h1 className={"text-white font-black text-5xl italic"}>
@@ -43,7 +44,7 @@ const Home = () => {
             <form>
               <div className={"flex justify-center items-center space-x-2"}>
                 <div>
-                  <Input placeholder={"Email address"} />
+                  <Input id={"emailInput"} placeholder={"Email address"} />
                 </div>
                 <Button
                   text={"Get Started"}
