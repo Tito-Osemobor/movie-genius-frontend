@@ -1,0 +1,25 @@
+.gallery {
+    width: 120vw;
+    height: 100vh;
+    opacity: 0.3;
+}
+
+.gallery-tray {
+    white-space: nowrap;
+    height: 33.33%;
+    margin: 5px auto;
+}
+
+.gallery-tray div {
+    display: inline-block;
+    width: 14.2%;
+    height: 100%;
+}
+
+.gallery-tray img {
+    border-radius: 0.3rem;
+    margin: 2.5px 5px;
+    width: 95%;
+    height: 100%;
+}
+
