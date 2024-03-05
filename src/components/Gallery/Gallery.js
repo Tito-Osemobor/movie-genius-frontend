@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import movieApi from "../../service/movieApi";
-import "./Slider.css";
+import "./Gallery.css";
 
-const Slider = () => {
+const Gallery = () => {
   const [posterData, setPosterData] = useState([]);
 
   useEffect(() => {
@@ -33,4 +33,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default Gallery;
