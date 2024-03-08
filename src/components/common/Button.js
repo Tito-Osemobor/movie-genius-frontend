@@ -6,7 +6,7 @@ const Button = (props) => {
     <div className={"items-center"}>
       <button
         className={`flex flex-row items-center justify-center bg-red-600
-                    group active:bg-red-700 rounded-md
+                    group active:bg-red-700 hover:bg-red-700 rounded-md
                     py-2 px-6 text-white font-bold
                     ${props.width} ${props.height}`}>
         <p className={`group-active:text-gray-300 ${props.textSize}`}>{props.text}</p>
