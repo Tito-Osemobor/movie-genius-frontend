@@ -1,21 +1,10 @@
-import React, { useEffect, useState } from "react";
-import movieApi from "../../service/movieApi";
+import React, { useContext } from "react";
 import "./Gallery.css";
+import { BackgroundImageContext } from "../../hooks/useContext/context";
 
 const Gallery = () => {
-  const [posterData, setPosterData] = useState([]);
-
-  useEffect(() => {
-    movieApi.getRandomPosters().then((posterPaths) => {
-      setPosterData([
-        posterPaths.slice(0, 7),
-        posterPaths.slice(7, 14),
-        posterPaths.slice(14, 21),
-        posterPaths.slice(21, 28),
-      ]);
-    });
-  }, []);
-
+  const posterData = useContext(BackgroundImageContext)
+  
   return (
     <div className="absolute -top-36">
       <div className="gallery rotate-12 select-none">
