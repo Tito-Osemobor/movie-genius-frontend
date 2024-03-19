@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Input from "../components/common/Input";
 import Button from "../components/common/Button";
@@ -10,20 +9,14 @@ const Home = () => {
   return (
     <div className={"flex flex-col h-screen relative"}>
       <Gallery />
-      
+
       <nav className={"flex items-center justify-between p-5 z-50"}>
         <h1 className={"text-red-600 font-extrabold italic text-4xl"}>
           MovieGenius
         </h1>
         <div>
-          <Link
-            to={"/login"}
-            className={
-              "bg-red-600 py-2 px-4 rounded-md text-white text-md font-bold italic"
-            }
-          >
-            Sign In
-          </Link>
+          <Button text={"Sign In"} textSize={"text-md"} to="/login" 
+                  className={""}/>
         </div>
       </nav>
 
@@ -50,6 +43,8 @@ const Home = () => {
                   text={"Get Started"}
                   textSize={"text-2xl"}
                   iconSize={25}
+                  to="/browse"
+                  className={"h-16"}
                 />
               </div>
             </form>
