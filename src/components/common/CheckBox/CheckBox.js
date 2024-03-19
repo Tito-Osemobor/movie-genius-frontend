@@ -6,8 +6,8 @@ const CheckBox = () => {
     <div className="checkboxes__item">
       <label className="checkbox style-e">
         <input type="checkbox" />
-        <div className="checkbox__checkmark"></div>
-        <div className="checkbox__body text-white">Remember me</div>
+        <div className="checkbox_checkmark"></div>
+        <div className="checkbox__=body text-white">Remember me</div>
       </label>
     </div>
   );
