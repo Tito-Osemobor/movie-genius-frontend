@@ -1,16 +1,16 @@
 const BASE_URL = process.env.REACT_APP_MOVIE_BASE_URL
 
-const fetchApi = async (endpoint, options = {}) => {
+const fetchApi = async (endpoint, options = {}, auth = false) => {
   try {
     // const authToken = getAuthToken();
     const authToken = process.env.REACT_APP_AUTH_TOKEN
 
     const response = await fetch(`${BASE_URL}${endpoint}`, {
       ...options,
-      headers: {
+      headers: auth ? {
         ...options.headers,
         'Authorization': `Bearer ${authToken}`,
-      },
+      } : options.headers
     });
 
     if (!response.ok) {
