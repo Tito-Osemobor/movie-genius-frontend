@@ -5,18 +5,17 @@ import Input from "../components/common/Input";
 import Button from "../components/common/Button";
 import Gallery from "../components/Gallery/Gallery";
 import CheckBox from "../components/common/CheckBox/CheckBox";
+import Header from "../components/common/Header";
 import "../assets/styles/Login.css";
 
 const Login = () => {
   return (
-    <div className={"flex flex-col h-screen"}>
+    <div className={"flex flex-col h-screen relative bg-black overflow-hidden"}>
       <Gallery />
 
       <nav className={"flex items-center justify-between p-5 z-50"}>
         <Link to={"/"}>
-          <h1 className={"text-red-600 font-extrabold italic text-4xl"}>
-            MovieGenius
-          </h1>
+        <Header size="text-4xl " />
         </Link>
       </nav>
 

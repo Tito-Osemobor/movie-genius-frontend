@@ -1,21 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import Footer from "../components/Footer";
 import Input from "../components/common/Input";
 import Button from "../components/common/Button";
 import Gallery from "../components/Gallery/Gallery";
+import Header from "../components/common/Header";
+import auth from "../service/auth";
 import "../assets/styles/Home.css";
 
 const Home = () => {
+  const [ email, setEmail ] = useState("");
+  const navigate = useNavigate();
+
+  const handleInput = (e) => {
+    setEmail(e.target.value);
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const exists = await auth.userExists(email);
+    if (exists) {
+      navigate("/login");
+    } else {
+      navigate("/browse")
+    }
+  }
+
   return (
-    <div className={"flex flex-col h-screen relative"}>
+    <div className={"flex flex-col h-screen relative bg-black overflow-hidden"}>
       <Gallery />
 
       <nav className={"flex items-center justify-between p-5 z-50"}>
-        <h1 className={"text-red-600 font-extrabold italic text-4xl"}>
-          MovieGenius
-        </h1>
+        <Header size="text-4xl " />
         <div>
-          <Button text={"Sign In"} textSize={"text-md"} to="/login" 
+          <Button text={"Sign In"} textSize={"text-md"} to="/login"
                   className={""}/>
         </div>
       </nav>
@@ -34,16 +52,18 @@ const Home = () => {
                 Ready to watch? Enter your email here to create your account.
               </p>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className={"flex justify-center items-center space-x-2"}>
                 <div>
-                  <Input id={"emailInput"} placeholder={"Email address"} />
+                  <Input id={"emailInput"}
+                         placeholder={"Email address"}
+                         onchange={handleInput}
+                  />
                 </div>
                 <Button
                   text={"Get Started"}
                   textSize={"text-2xl"}
                   iconSize={25}
-                  to="/browse"
                   className={"h-16"}
                 />
               </div>
