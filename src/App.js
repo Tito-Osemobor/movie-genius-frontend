@@ -7,7 +7,6 @@ import { BackgroundImageProvider } from "./hooks/useContext/context";
 
 const App = () => {
   return (
-    <>
     <BackgroundImageProvider>
       <Routes>
         <Route path="/" Component={Home} />
@@ -15,7 +14,6 @@ const App = () => {
         <Route path="/browse" Component={Browse}/>
       </Routes>
     </BackgroundImageProvider>
-    </>
   );
 }
 
