@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
+import {useBackgroundImage} from "../../hooks/useContext/context";
 import "./Gallery.css";
-import { BackgroundImageContext } from "../../hooks/useContext/context";
 
 const Gallery = () => {
-  const posterData = useContext(BackgroundImageContext)
-  
+  const posterData = useBackgroundImage()
+
   return (
     <div className="absolute -top-36">
       <div className="gallery rotate-12 select-none">
