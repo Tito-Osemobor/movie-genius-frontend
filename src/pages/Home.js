@@ -22,7 +22,7 @@ const Home = () => {
     if (exists) {
       navigate("/login");
     } else {
-      navigate("/browse")
+      navigate("/signup")
     }
   }
 
